@@ -350,13 +350,14 @@ define([
 		getValues: function(){
 			var seqcomp_values={};
 			var values = this.inherited(arguments);
-			var compGenomeList = query(".genomedata");	
+			var rawCompGenomeList = query(".genomedata");	
             var genomeIds=[];            
             var userGenomes =[];
             var featureGroups =[];
             var refType = "";
             var refIndex = 0;
-
+			var compGenomeList = rawCompGenomeList.reverse();
+			
 			if (values["ref_genome_id"])
 			{
 				refType = "ref_genome_id";
